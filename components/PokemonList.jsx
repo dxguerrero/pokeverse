@@ -8,7 +8,7 @@ export const PokemonList = ({
     return (
         <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
             {allPokemon.map((pokemon, idx) => {
-                return <Pokemon key={idx} pokemon={pokemon}/>
+                return <Pokemon key={idx} pokemon={pokemon} allPokemon={{allPokemon}}/>
             })}
         </div>
     )

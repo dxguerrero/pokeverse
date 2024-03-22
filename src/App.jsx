@@ -35,7 +35,8 @@ function App() {
         </Form.Group>
       </Form>
 
-      <PokemonList allPokemon={allPokemon}/>
+
+      {allPokemon && <PokemonList allPokemon={allPokemon}/>}
     </>
   )
 }
