@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Container, Form, Navbar } from 'react-bootstrap';
 import './App.css';
+import { PokemonList } from '../components/PokemonList';
 
 const pokeApi = 'https://pokeapi.co/api/v2/pokemon?limit=151'
 
@@ -11,9 +12,11 @@ function App() {
     fetch(pokeApi)
       .then((res) => res.json())
       .then((data) => {
-        setAllPokemon(data);
+        setAllPokemon(data.results);
       })
   }, [])
+
+
   
 
   return (
@@ -25,12 +28,14 @@ function App() {
       </Navbar>
 
 
-      <Form>
+      <Form style={{width: '20%', margin: 'auto'}}>
         <Form.Group>
           <Form.Label>Search</Form.Label>
           <Form.Control placeholder='Search..'/>
         </Form.Group>
       </Form>
+
+      <PokemonList allPokemon={allPokemon}/>
     </>
   )
 }
