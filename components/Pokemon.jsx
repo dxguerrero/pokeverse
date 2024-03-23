@@ -20,13 +20,15 @@ export const Pokemon = ({allPokemon, pokemon}) => {
 
     return (
         (!pokemonData ? "Loading" :
-            (<Card style={{
-            height: '300px',
-            width: '200px',
-            margin: '10px',
-            border: 'solid 5px yellow',
-            padding: '15px',
-            backgroundImage: 'linear-gradient(to bottom right, orange, white, orange, white)'
+            (<Card 
+                className={pokemonData.types[0].type.name}
+                style={{
+                height: '300px',
+                width: '200px',
+                margin: '10px',
+                border: 'solid 5px yellow',
+                padding: '15px',
+            
         }}> 
             <div style={{display:'flex', alignItems:'start'}}>
                 <Card.Title style={{fontSize: '16px', textTransform: 'capitalize'}}>{pokemonData.name}</Card.Title>
