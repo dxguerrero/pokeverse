@@ -33,7 +33,7 @@ export const Pokemon = ({ allPokemon, pokemon }) => {
                     <Card.Title style={{ fontSize: '16px', textTransform: 'capitalize' }}>{pokemonData.name}</Card.Title>
                 </div>
                 {pokemonData.sprites && (
-                    <Card style={{ height: '170px', width: '84%', marginLeft: 'auto', marginRight: 'auto', display: 'flex', alignItems: 'center', paddingBottom: '130px' }}>
+                    <Card className={pokemonData.types[0].type.name + "-image"} style={{ height: '170px', width: '84%', marginLeft: 'auto', marginRight: 'auto', display: 'flex', alignItems: 'center', paddingBottom: '130px'}}>
                         <Card.Img alt={pokemonData.name} src={pokemonData.sprites.front_default} style={{height:'180px', width: '180px'}}></Card.Img>
                     </Card>)}
             </Card>))
