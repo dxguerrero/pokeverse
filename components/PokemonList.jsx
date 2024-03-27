@@ -1,14 +1,14 @@
 import { Pokemon } from './Pokemon'
 
 export const PokemonList = ({
-    allPokemon
+    filteredPokemon
 }) => {
 
 
     return (
         <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
-            {allPokemon.map((pokemon, idx) => {
-                return <Pokemon key={idx} pokemon={pokemon} allPokemon={{allPokemon}}/>
+            {filteredPokemon.map((pokemon, idx) => {
+                return <Pokemon key={idx} pokemon={pokemon} filteredPokemon={filteredPokemon}/>
             })}
         </div>
     )
