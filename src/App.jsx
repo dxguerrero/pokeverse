@@ -7,17 +7,43 @@ const pokeApi = 'https://pokeapi.co/api/v2/pokemon?limit=151'
 
 function App() {
   const [allPokemon, setAllPokemon] = useState([]);
+  const [filteredPokemon, setFilteredPokemon] = useState([])
+  const [search, setSearch] = useState('')
 
   useEffect(()=>{
     fetch(pokeApi)
       .then((res) => res.json())
       .then((data) => {
         setAllPokemon(data.results);
+        setFilteredPokemon(data.results);
+      })
+      .catch((error) => {
+        console.error('Error fetching pokemon:', error);
       })
   }, [])
 
 
+  const filterPokemon = () => {
+    const searchTerm = search.toLowerCase();
+
+    if (searchTerm == '') {
+      setFilteredPokemon(allPokemon);
+      return
+    }
+
+    const filteredPokemon = allPokemon.filter((pokemon) => {
+      const pokemonName = pokemon.name.toLowerCase();
+      return pokemonName.includes(searchTerm);
+    })
+
+    setFilteredPokemon(filteredPokemon)
+  }
   
+  const handleSearchChange = (event) => {
+    setSearch(event.target.value);
+    filterPokemon();
+  }
+
 
   return (
     <>
@@ -31,12 +57,12 @@ function App() {
       <Form style={{width: '20%', margin: 'auto'}}>
         <Form.Group>
           <Form.Label>Search</Form.Label>
-          <Form.Control placeholder='Search..'/>
+          <Form.Control placeholder='Search..' onChange={handleSearchChange}/>
         </Form.Group>
       </Form>
 
 
-      {allPokemon && <PokemonList allPokemon={allPokemon}/>}
+      {allPokemon && <PokemonList filteredPokemon={filteredPokemon}/>}
     </>
   )
 }

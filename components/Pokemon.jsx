@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Card } from 'react-bootstrap'
 
-export const Pokemon = ({ allPokemon, pokemon }) => {
+export const Pokemon = ({ filteredPokemon, pokemon }) => {
     const [pokemonData, setPokemonData] = useState({})
 
     async function fetchPokemonData() {
@@ -16,7 +16,7 @@ export const Pokemon = ({ allPokemon, pokemon }) => {
 
     useEffect(() => {
         fetchPokemonData()
-    }, [allPokemon])
+    }, [filteredPokemon])
 
     return (
         (!pokemonData.types ? "Loading" :
