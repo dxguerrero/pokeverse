@@ -26,7 +26,7 @@ function App() {
   const filterPokemon = () => {
     const searchTerm = search.toLowerCase();
 
-    if (searchTerm == '') {
+    if (!searchTerm) {
       setFilteredPokemon(allPokemon);
       return
     }
@@ -41,9 +41,11 @@ function App() {
   
   const handleSearchChange = (event) => {
     setSearch(event.target.value);
-    filterPokemon();
   }
 
+  useEffect(()=>{
+    filterPokemon();
+  }, [search])
 
   return (
     <>
@@ -62,7 +64,7 @@ function App() {
       </Form>
 
 
-      {allPokemon && <PokemonList filteredPokemon={filteredPokemon}/>}
+      {filteredPokemon.length > 0 && <PokemonList filteredPokemon={filteredPokemon}/>}
     </>
   )
 }
