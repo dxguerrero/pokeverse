@@ -19,7 +19,7 @@ export const Pokemon = ({ filteredPokemon, pokemon }) => {
     }, [filteredPokemon])
 
     return (
-        (!pokemonData.types ? "Loading" :
+        (pokemonData.types &&
             (<Card
                 className={pokemonData.types[0].type.name}
                 style={{
