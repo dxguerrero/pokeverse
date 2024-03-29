@@ -1,8 +1,10 @@
-import { useEffect, useState } from 'react'
-import { Card } from 'react-bootstrap'
+import { useEffect, useState, useContext } from 'react';
+import { Card } from 'react-bootstrap';
+import { CurrentPokemonContext } from '../contexts/CurrentPokemonContext';
 
 export const Pokemon = ({ filteredPokemon, pokemon }) => {
     const [pokemonData, setPokemonData] = useState({})
+    const { setCurrentPokemon } = useContext(CurrentPokemonContext)
 
     async function fetchPokemonData() {
         try {
@@ -14,6 +16,10 @@ export const Pokemon = ({ filteredPokemon, pokemon }) => {
         }
     }
 
+    const clickHandler = () => {
+        setCurrentPokemon(pokemonData)
+    }
+
     useEffect(() => {
         fetchPokemonData()
     }, [filteredPokemon])
@@ -21,10 +27,11 @@ export const Pokemon = ({ filteredPokemon, pokemon }) => {
     return (
         (pokemonData.types &&
             (<Card
-                className={pokemonData.types[0].type.name}
+                onClick={clickHandler}
+                className='pokemon-container'
                 style={{
-                    height: '425px',
-                    width: '303px',
+                    height: '200px',
+                    width: '150px',
                     margin: '10px',
                     padding: '15px',
                     borderRadius: '20px'
@@ -33,9 +40,9 @@ export const Pokemon = ({ filteredPokemon, pokemon }) => {
                     <Card.Title style={{ fontSize: '16px', textTransform: 'capitalize' }}>{pokemonData.name}</Card.Title>
                 </div>
                 {pokemonData.sprites && (
-                    <Card className={pokemonData.types[0].type.name + "-image"} style={{ height: '170px', width: '84%', marginLeft: 'auto', marginRight: 'auto', display: 'flex', alignItems: 'center', paddingBottom: '130px'}}>
-                        <Card.Img alt={pokemonData.name} src={pokemonData.sprites.front_default} style={{height:'180px', width: '180px'}}></Card.Img>
-                    </Card>)}
+                <div style={{ height: '100%' ,display: 'flex', alignItems: 'end', justifyContent: 'center'}}>
+                    <Card.Img onClick={clickHandler} alt={pokemonData.name} src={pokemonData.sprites.front_default}></Card.Img>
+                </div>)} 
             </Card>))
     )
 }

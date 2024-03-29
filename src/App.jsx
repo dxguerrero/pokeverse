@@ -1,14 +1,17 @@
 import { useState, useEffect } from 'react';
-import { Container, Form, Navbar } from 'react-bootstrap';
+import { Card, Col, Container, Form, Navbar, Row } from 'react-bootstrap';
 import './App.css';
 import { PokemonList } from '../components/PokemonList';
-
+import { PartyList } from '../components/PartyList'
+import { PokemonView } from '../components/PokemonView';
+import { CurrentPokemonContext } from '../contexts/CurrentPokemonContext';
 const pokeApi = 'https://pokeapi.co/api/v2/pokemon?limit=151'
 
 function App() {
   const [allPokemon, setAllPokemon] = useState([]);
   const [filteredPokemon, setFilteredPokemon] = useState([])
   const [search, setSearch] = useState('')
+  const [currentPokemon, setCurrentPokemon] = useState({})
 
   useEffect(()=>{
     fetch(pokeApi)
@@ -48,24 +51,38 @@ function App() {
   }, [search])
 
   return (
-    <>
+    <div style={{display: 'flex', justifyContent: "center", alignItems:'flex-start', width: '100%'}}>
       <Navbar bg="dark" data-bs-theme="dark" expand="lg" fixed="top">
         <Container style={{display: 'flex', justifyContent: 'start', marginLeft: '1em'}}>
           <Navbar.Brand>Pokeverse</Navbar.Brand>
         </Container>
       </Navbar>
+      <CurrentPokemonContext.Provider value={{currentPokemon, setCurrentPokemon}}>
+        <Col lg='2' style={{marginTop: '100px'}}>
+          <Row>
+            <PartyList/>
+          </Row>
+        </Col>
+        <Col lg='10'style={{marginTop: '100px'}}>
+          <Row>
+            <Form style={{width: '20%', margin: 'auto'}}>
+              <Form.Group>
+                <Form.Control placeholder='Search..' onChange={handleSearchChange}/>
+              </Form.Group>
+            </Form>
+          </Row>
+          <Row>
+            {filteredPokemon.length > 0 && <PokemonList filteredPokemon={filteredPokemon}/>}
+          </Row>
+        </Col>
+          <Row>
 
-
-      <Form style={{width: '20%', margin: 'auto'}}>
-        <Form.Group>
-          <Form.Label>Search</Form.Label>
-          <Form.Control placeholder='Search..' onChange={handleSearchChange}/>
-        </Form.Group>
-      </Form>
-
-
-      {filteredPokemon.length > 0 && <PokemonList filteredPokemon={filteredPokemon}/>}
-    </>
+          </Row>
+        <Col lg='4' style={{marginTop: '100px', marginLeft: '40px'}}>
+          <PokemonView/>
+        </Col>
+      </CurrentPokemonContext.Provider>
+    </div>
   )
 }
 

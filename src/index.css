@@ -2,11 +2,15 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
+  height: 100vh;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #ffffff;
-  
+  background-image: linear-gradient(to right, #099765 0%, rgb(0, 255, 195) 20%);
+  background-size: cover;
+  background-repeat: repeat-y;
+  height: 100vh;
+  width: 100vw;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,126 +19,9 @@
 }
 
 body {
-  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/aee28f7c-d3b8-433a-8458-31c42534284b/d6cqoqc-412c8296-9145-4639-b6b7-b92888f20983.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2FlZTI4ZjdjLWQzYjgtNDMzYS04NDU4LTMxYzQyNTM0Mjg0YlwvZDZjcW9xYy00MTJjODI5Ni05MTQ1LTQ2MzktYjZiNy1iOTI4ODhmMjA5ODMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.aPKL00bIVrYRyBmVWiodmw-XLc4RhIB9QpTTXopIC2c');
-
-}
-
-.fire {
-  background-image: url('https://p1.hiclipart.com/preview/189/583/577/blanks-classic-cards-pokemon-trading-card-png-clipart-thumbnail.jpg');
-}
-
-.fire-image {
-  background-image: url('https://www.pokemonaaah.net/wp-content/uploads/2021/04/sd070_6054092937_o.jpg');
-}
-
-.grass {
-  background-image: url('https://p1.hiclipart.com/preview/717/244/1019/blanks-classic-cards-pokemon-trading-card-illustration-png-clipart-thumbnail.jpg');
-}
-
-.grass-image {
-  background-image: url('https://www.pokemonaaah.net/wp-content/uploads/2021/05/vol_006_sf162_6054165387_o.jpg');
-}
-
-.water {
-  background-image: url('https://p1.hiclipart.com/preview/292/997/229/blanks-classic-cards-pokemon-trading-card-png-clipart-thumbnail.jpg');
-}
-
-.water-image {
-  background-image: url('https://www.pokemonaaah.net/wp-content/uploads/2021/04/coolBeach.jpg');
-}
-
-.bug {
-  background-image: url('https://p1.hiclipart.com/preview/717/244/1019/blanks-classic-cards-pokemon-trading-card-illustration-png-clipart-thumbnail.jpg');
-}
-
-.bug-image {
-  background-image: url('https://www.pokemonaaah.net/wp-content/uploads/2021/05/vol_006_sf179_6054152741_o.jpg');
-}
-
-.normal {
-  background-image: url('https://p1.hiclipart.com/preview/190/630/494/blanks-classic-cards-pokemon-trading-card-png-clipart-thumbnail.jpg');
-}
-
-.normal-image {
-  background-image: url('https://www.pokemonaaah.net/wp-content/uploads/2021/05/si085_6057084928_o.jpg');
-}
-
-.poison {
-  background-image: url('https://p1.hiclipart.com/preview/717/244/1019/blanks-classic-cards-pokemon-trading-card-illustration-png-clipart-thumbnail.jpg');
-}
-
-.poison-image {
-  background-image: url('https://www.pokemonaaah.net/wp-content/uploads/2021/05/si046_6057107518_o.jpg');
-}
-
-.electric{
-  background-image: url('https://p1.hiclipart.com/preview/805/502/518/blanks-classic-cards-pokemon-trading-card-png-clipart-thumbnail.jpg');
-}
-
-.electric-image {
-  background-image: url('https://www.pokemonaaah.net/wp-content/uploads/2021/04/vol_007_sg088_6056369695_o.jpg');
-}
-
-.ground {
-  background-image: url('https://p1.hiclipart.com/preview/997/786/324/blanks-classic-cards-pokemon-trading-card-png-clipart-thumbnail.jpg');
-}
-
-.ground-image {
-  background-image: url('https://www.pokemonaaah.net/wp-content/uploads/2021/05/vol_008_sh176_6056509713_o.jpg');
-}
-
-.fairy {
-  background-image: url('https://p1.hiclipart.com/preview/190/630/494/blanks-classic-cards-pokemon-trading-card-png-clipart-thumbnail.jpg');
-}
-
-.fairy-image {
-  background-image: url('https://www.pokemonaaah.net/wp-content/uploads/2021/05/si077_6056537573_o.jpg');
-}
-
-.fighting {
-  background-image: url('https://p1.hiclipart.com/preview/997/786/324/blanks-classic-cards-pokemon-trading-card-png-clipart-thumbnail.jpg');
-}
-
-.fighting-image {
-  background-image: url('https://www.pokemonaaah.net/wp-content/uploads/2021/05/si115_6057095492_o.jpg');
-}
-
-.psychic {
-  background-image: url('https://p1.hiclipart.com/preview/871/971/640/blanks-classic-cards-pokemon-trading-card-png-clipart-thumbnail.jpg');
-}
-
-.psychic-image {
-  background-image: url('https://www.pokemonaaah.net/wp-content/uploads/2021/05/vol_007_sg108_6056911046_o-e1619862034907.jpg');
-}
-
-.rock {
-  background-image: url('https://p1.hiclipart.com/preview/997/786/324/blanks-classic-cards-pokemon-trading-card-png-clipart-thumbnail.jpg');
-}
-
-.rock-image {
-  background-image: url('https://www.pokemonaaah.net/wp-content/uploads/2021/05/vol_006_sf041_6054160071_o.jpg');
-}
-
-.ghost {
-  background-image: url('https://p1.hiclipart.com/preview/871/971/640/blanks-classic-cards-pokemon-trading-card-png-clipart-thumbnail.jpg');
-}
-
-.ghost-image {
-  background-image: url('https://www.pokemonaaah.net/wp-content/uploads/2021/05/vol_007_sg043_6056359621_o.jpg');
-}
-
-.ice {
-  background-image: url('https://p1.hiclipart.com/preview/292/997/229/blanks-classic-cards-pokemon-trading-card-png-clipart-thumbnail.jpg');
-}
-
-.ice-image {
-  background-image: url('https://www.pokemonaaah.net/wp-content/uploads/2021/05/si104_6056542865_o.jpg');
-}
-
-.dragon {
-  background-image: url('https://p1.hiclipart.com/preview/190/630/494/blanks-classic-cards-pokemon-trading-card-png-clipart-thumbnail.jpg');
-}
-
-.dragon-image {
-  background-image: url('https://www.pokemonaaah.net/wp-content/uploads/2021/05/vol_007_sg011_6056374229_o-e1620461098740.jpg');
+  background-image: linear-gradient(to right, #099765 0%, rgb(0, 255, 195) 20%);
+  background-size: cover;
+  background-repeat: repeat-y;
+  height: 100vh;
+  width: 100vw;
 }
