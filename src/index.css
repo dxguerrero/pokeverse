@@ -25,3 +25,7 @@ body {
   height: 100vh;
   width: 100vw;
 }
+
+.pokemon-container{
+  background-color:rgb(13, 105, 83)
+}
