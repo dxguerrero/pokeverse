@@ -6,7 +6,7 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #ffffff;
-  background-image: linear-gradient(to right, #099765 0%, rgb(0, 255, 195) 20%);
+  background-image: linear-gradient(to right, #099765 0%, #199268d2 20%, rgb(0, 255, 195) 40%);
   background-size: cover;
   background-repeat: repeat-y;
   height: 100vh;
@@ -19,7 +19,7 @@
 }
 
 body {
-  background-image: linear-gradient(to right, #099765 0%, rgb(0, 255, 195) 20%);
+  background-image: linear-gradient(to right, #099765 0%, #199268d2 20%, rgb(0, 255, 195) 40%);
   background-size: cover;
   background-repeat: repeat-y;
   height: 100vh;
@@ -27,5 +27,5 @@ body {
 }
 
 .pokemon-container{
-  background-color:rgb(13, 105, 83)
+  background-color:rgb(13, 105, 83);
 }
