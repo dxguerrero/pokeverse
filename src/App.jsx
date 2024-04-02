@@ -61,12 +61,12 @@ function App() {
           </Container>
         </Navbar>
         <CurrentPokemonContext.Provider value={{currentPokemon, setCurrentPokemon}}>
-          <Col lg='2' style={{marginTop: '100px'}}>
+          <Col lg='4' style={{marginTop: '100px', marginLeft: '-400px'}}>
             <Row>
               <PartyList/>
             </Row>
           </Col>
-          <Col lg='10'style={{marginTop: '100px'}}>
+          <Col sm='1' md='6' lg='10'style={{marginTop: '100px'}}>
             <Row>
               <Form style={{width: '20%', margin: 'auto'}}>
                 <Form.Group>
@@ -81,7 +81,7 @@ function App() {
             <Row>
 
             </Row>
-          <Col lg='4' style={{marginTop: '100px', marginLeft: '40px'}}>
+          <Col sm='1' md='2' lg='3' style={{marginTop: '40px', marginLeft: '20px'}}>
             <PokemonView/>
           </Col>
         </CurrentPokemonContext.Provider>
