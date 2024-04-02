@@ -21,11 +21,13 @@ export const PokemonView = () => {
     }   
 
     return (
-        <Card style={{position: 'fixed', height: '500px', width: '25%', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgb(13, 105, 83)'}}>
-            <Card.Title>Pokemon View</Card.Title>
-            {currentPokemon && (<Card.Body style={{paddingBottom: '-16px'}}>{currentPokemon.name}</Card.Body>)}
-            {currentPokemon.sprites && (<Card.Img src={currentPokemon.sprites.other.showdown.front_default}  style={{height: '250px', width: '250px'}}/>)}
-            <Button onClick={addToParty}>Add to Party</Button>
+        <Card style={{height: '8000px', width: '100vw', backgroundColor: 'rgb(0,0,0,0.2)'}}>
+            <Card style={{marginTop:'50px', position: 'fixed', height: '1000px', width: '40%', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgb(0,0,0,0.5)'}}>
+                <Card.Title>Pokemon View</Card.Title>
+                {currentPokemon && (<Card.Body style={{paddingBottom: '-16px'}}>{currentPokemon.name}</Card.Body>)}
+                {currentPokemon.sprites && (<Card.Img src={currentPokemon.sprites.other.showdown.front_default}  style={{height: '250px', width: '250px'}}/>)}
+                <Button onClick={addToParty}>Add to Party</Button>
+            </Card>
         </Card>
     )
 
