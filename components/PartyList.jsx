@@ -5,6 +5,11 @@ import { PartyContext } from '../contexts/PartyContext';
 export const PartyList  = () => {
     
     const {party, setParty} = useContext(PartyContext);
+
+    const removeFromParty = (partyIndex) => {
+        setParty((prevParty) => prevParty.filter((_, i) => i !== partyIndex));
+    };
+
     return (
         <Card style={{height: '80vh', width: '100%', background: 'none', border: "none", backgroundColor: 'none', overflow: 'hidden'}}>
 
@@ -18,8 +23,8 @@ export const PartyList  = () => {
                 </Card>
                 <Col style={{marginTop: '10px', display: 'flex', flexDirection: 'column', justifyContent: 'start'}}>
                     {party &&
-                        party.map((pokemon) => (
-                            <Card style={{backgroundColor: 'rgb(14, 122, 97)', margin: '5px'}}>
+                        party.map((pokemon, index) => (
+                            <Card key={index} style={{backgroundColor: 'rgb(14, 122, 97)', margin: '5px'}}>
                                 <Container>
                                     <Row>
                                         <Col>
@@ -29,7 +34,7 @@ export const PartyList  = () => {
                                             <Card.Body><img src={pokemon.sprites?.versions?.['generation-viii']?.icons?.front_default}/></Card.Body>
                                         </Col>
                                         <Col>
-                                            <Button>Remove From party</Button>
+                                            <Button onClick={() => removeFromParty(index)}>Remove From party</Button>
                                         </Col>
                                     </Row>
                                 </Container>
