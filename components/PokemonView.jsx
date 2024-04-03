@@ -10,13 +10,8 @@ export const PokemonView = () => {
     const { party, setParty} = useContext(PartyContext);
 
     const addToParty = () => {
-        console.log(party)
          if (currentPokemon && party.length < 6) {
             setParty([...party, currentPokemon])
-            console.log(party.length)
-            for (let i=0; i < party.length; i++) {
-                console.log(party[i].name)
-            }
         }
     }   
 
