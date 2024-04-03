@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
+import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import { PartyContext } from '../contexts/PartyContext';
 
 export const PartyList  = () => {
@@ -20,7 +20,19 @@ export const PartyList  = () => {
                     {party &&
                         party.map((pokemon) => (
                             <Card style={{backgroundColor: 'rgb(14, 122, 97)', margin: '5px'}}>
-                                <Card.Title>{pokemon.name}</Card.Title>
+                                <Container>
+                                    <Row>
+                                        <Col>
+                                            <Card.Title>{pokemon.name}</Card.Title>
+                                        </Col>
+                                        <Col>
+                                            <Card.Body><img src={pokemon.sprites?.versions?.['generation-viii']?.icons?.front_default}/></Card.Body>
+                                        </Col>
+                                        <Col>
+                                            <Button>Remove From party</Button>
+                                        </Col>
+                                    </Row>
+                                </Container>
                             </Card>
                         ))
                     }
