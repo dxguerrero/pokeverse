@@ -29,3 +29,7 @@ body {
 .pokemon-container{
   background-color:rgb(14, 122, 97);
 }
+
+.white-text{
+  color: white;
+}
