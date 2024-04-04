@@ -24,14 +24,14 @@ export const PartyList  = () => {
                 <Col style={{marginTop: '10px', display: 'flex', flexDirection: 'column', justifyContent: 'start'}}>
                     {party &&
                         party.map((pokemon, index) => (
-                            <Card key={index} style={{backgroundColor: 'rgb(14, 122, 97)', margin: '5px'}}>
+                            <Card key={index} style={{backgroundColor: 'rgb(14, 122, 97)', margin: '5px', height: '150px'}}>
                                 <Container>
                                     <Row>
                                         <Col>
-                                            <Card.Title>{pokemon.name}</Card.Title>
+                                            <Card.Title className='white-text'>{pokemon.name}</Card.Title>
                                         </Col>
-                                        <Col>
-                                            <Card.Body><img src={pokemon.sprites?.versions?.['generation-viii']?.icons?.front_default}/></Card.Body>
+                                        <Col style={{display: 'flex', justifyContent: 'start'}}>
+                                            <Card.Body><img src={pokemon.sprites.other.showdown.front_default}/></Card.Body>
                                         </Col>
                                         <Col>
                                             <Button onClick={() => removeFromParty(index)}>Remove From party</Button>
