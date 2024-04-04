@@ -17,7 +17,7 @@ export const PartyList  = () => {
                     <Col>
                         <Row style={{marginBottom: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                             <Card.Img/>
-                            <Card.Title>Current Party</Card.Title>
+                            <Card.Title className='white-text'>Current Party</Card.Title>
                         </Row>
                     </Col>
                 </Card>

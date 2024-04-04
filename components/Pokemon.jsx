@@ -36,9 +36,6 @@ export const Pokemon = ({ filteredPokemon, pokemon }) => {
                     padding: '15px',
                     borderRadius: '20px'
                 }}>
-                <div style={{ display: 'flex', alignItems: 'start', marginLeft: '15px', marginTop: '5px'}}>
-                    <Card.Title style={{ fontSize: '16px', textTransform: 'capitalize' }}>{pokemonData.name}</Card.Title>
-                </div>
                 {pokemonData.sprites && (
                 <div style={{ height: '100%' ,display: 'flex', alignItems: 'end', justifyContent: 'center'}}>
                     <Card.Img onClick={clickHandler} alt={pokemonData.name} src={pokemonData.sprites.front_default}></Card.Img>
