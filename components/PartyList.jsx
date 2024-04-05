@@ -12,7 +12,6 @@ export const PartyList  = () => {
 
     return (
         <Card style={{height: '80vh', width: '100%', background: 'none', border: "none", backgroundColor: 'none', overflow: 'hidden'}}>
-
                 <Card style={{borderRadius: '90px', backgroundColor: 'rgb(14, 122, 97)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
                     <Col>
                         <Row style={{marginBottom: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
@@ -42,9 +41,6 @@ export const PartyList  = () => {
                         ))
                     }
                 </Col>
-                    
-                
-
         </Card>
     )
 }
