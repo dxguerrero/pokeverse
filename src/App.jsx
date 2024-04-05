@@ -54,19 +54,19 @@ function App() {
 
   return (
     <PartyContext.Provider value={{party, setParty}}>
-      <div style={{display: 'flex', justifyContent: "center", alignItems:'flex-start', width: '100%'}}>
+      <div style={{display: 'flex', justifyContent: "center", alignItems:'flex-start'}}>
         <Navbar bg="dark" data-bs-theme="dark" expand="lg" fixed="top">
           <Container style={{display: 'flex', justifyContent: 'start', marginLeft: '1em'}}>
             <Navbar.Brand>Pokeverse</Navbar.Brand>
           </Container>
         </Navbar>
         <CurrentPokemonContext.Provider value={{currentPokemon, setCurrentPokemon}}>
-          <Col lg='4' style={{marginTop: '100px', marginLeft: '-400px'}}>
+          <Col xs={12} md={4} lg={4} style={{marginTop: '100px', marginLeft: '-400px'}}>
             <Row>
               <PartyList/>
             </Row>
           </Col>
-          <Col sm='1' md='6' lg='10'style={{marginTop: '100px'}}>
+          <Col xs={4} md={6} lg={8} style={{marginTop: '100px'}}>
             <Row>
               <Form style={{width: '20%', margin: 'auto'}}>
                 <Form.Group>
@@ -75,13 +75,13 @@ function App() {
               </Form>
             </Row>
             <Row>
-              {filteredPokemon.length > 0 && <PokemonList filteredPokemon={filteredPokemon}/>}
+              {filteredPokemon.length > 0 && <PokemonList filteredPokemon={filteredPokemon} setFilteredPokemon={setFilteredPokemon}/>}
             </Row>
           </Col>
             <Row>
 
             </Row>
-          <Col sm='1' md='2' lg='3' style={{marginTop: '40px', marginLeft: '20px'}}>
+          <Col xs={4} md={6} lg={5} style={{marginTop: '20px', marginLeft: '30px', marginRight: '3px'}}>
             <PokemonView/>
           </Col>
         </CurrentPokemonContext.Provider>

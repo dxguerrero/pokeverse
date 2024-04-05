@@ -16,8 +16,8 @@ export const PokemonView = () => {
     }   
 
     return (
-        <Card style={{height: '8000px', width: '100vw', backgroundColor: 'rgb(0,0,0,0.2)'}}>
-            <Card className='white-text'style={{marginTop:'50px', position: 'fixed', height: '1000px', width: '40%', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgb(0,0,0,0.5)'}}>
+        <Card style={{height: '100vh', width: '100vw', backgroundColor: 'rgb(0,0,0,0.2)'}}>
+            <Card className='white-text'style={{marginTop:'50px', height: '700px', position: 'fixed', width: '40%', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgb(0,0,0,0.5)'}}>
                 <Card.Title>Pokemon View</Card.Title>
                 {currentPokemon && (<Card.Body style={{paddingBottom: '-16px'}}>{currentPokemon.name}</Card.Body>)}
                 {currentPokemon.sprites && (<Card.Img src={currentPokemon.sprites.other.showdown.front_default}  style={{height: '250px', width: '250px'}}/>)}
