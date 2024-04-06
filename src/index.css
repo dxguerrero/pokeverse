@@ -21,11 +21,31 @@ body {
   height: 100%;
   width: 100%;
   overflow: hidden;
-
 }
 
 .pokemon-container{
   background-color:rgb(14, 122, 97);
+  display: flex;
+  flex-direction: column;
+  width: 80%; /* Initially occupy full width */
+  height: 170px;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 4px; /* Adjust margin as needed */
+  padding: 10px;
+  /* Optional styles for card hover, etc. */
+}
+
+@media (min-width: 768px) {
+  .pokemon-card {
+    width: 33%; /* Adjust percentage as needed for desired columns */
+  }
+}
+
+@media (min-width: 1024px) {
+  .pokemon-card {
+    width: 25%; /* Adjust percentage as needed for desired columns */
+  }
 }
 
 .white-text{

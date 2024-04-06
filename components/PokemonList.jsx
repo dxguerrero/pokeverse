@@ -26,8 +26,11 @@ export const PokemonList = ({ filteredPokemon, setfilteredPokemon }) => {
           placeItems: 'start',
           paddingLeft: '50px',
           marginRight: '0px',
-          height: '90vh',
-          overflowY: 'auto'
+          width: '95%',
+          minHeight: '25%',
+          maxHeight: '85vh',
+          overflowY: 'auto',
+          gridAutoRows: 'minmax(auto, 1fr)'
         }}
       >
         {filteredPokemon.map((pokemon, idx) => (

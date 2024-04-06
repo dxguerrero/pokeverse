@@ -29,13 +29,7 @@ export const Pokemon = ({ filteredPokemon, pokemon }) => {
             (<Card
                 onClick={clickHandler}
                 className='pokemon-container'
-                style={{
-                    height: '200px',
-                    width: '150px',
-                    margin: '10px',
-                    padding: '15px',
-                    borderRadius: '20px'
-                }}>
+            >
                 {pokemonData.sprites && (
                 <div style={{ height: '100%' ,display: 'flex', alignItems: 'end', justifyContent: 'center'}}>
                     <Card.Img onClick={clickHandler} alt={pokemonData.name} src={pokemonData.sprites.front_default}></Card.Img>
