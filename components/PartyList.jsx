@@ -15,7 +15,6 @@ export const PartyList  = () => {
                 <Card style={{borderRadius: '90px', backgroundColor: 'rgb(14, 122, 97)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
                     <Col>
                         <Row style={{marginBottom: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                            <Card.Img/>
                             <Card.Title className='white-text'>Current Party</Card.Title>
                         </Row>
                     </Col>
@@ -30,7 +29,9 @@ export const PartyList  = () => {
                                             <Card.Title className='white-text'>{pokemon.name}</Card.Title>
                                         </Col>
                                         <Col style={{display: 'flex', justifyContent: 'start'}}>
-                                            <Card.Body><img src={pokemon.sprites.other.showdown.front_default}/></Card.Body>
+                                            <Card.Body>
+                                                <img src={pokemon.sprites.other.showdown.front_default}/>
+                                            </Card.Body>
                                         </Col>
                                         <Col>
                                             <Button onClick={() => removeFromParty(index)}>Remove From party</Button>

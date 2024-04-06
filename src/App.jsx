@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Card, Col, Container, Form, Navbar, Row } from 'react-bootstrap';
-import './App.css';
 import { PokemonList } from '../components/PokemonList';
 import { PartyList } from '../components/PartyList'
 import { PokemonView } from '../components/PokemonView';
@@ -61,13 +60,13 @@ function App() {
           </Container>
         </Navbar>
         <CurrentPokemonContext.Provider value={{ currentPokemon, setCurrentPokemon }}>
-          <Col xs={12} md={4} lg={5} style={{ marginTop: '100px', marginLeft: '-400px' }}>
+          <Col xs={12} md={4} lg={5} style={{ marginTop: '100px', width: '20%' }}>
             <Row>
               <PartyList />
             </Row>
           </Col>
-          <Col xs={4} md={6} lg={4} style={{ marginTop: '100px' }}>
-            <Row>
+          <Col xs={4} md={6} lg={6} style={{ marginTop: '75px' }}>
+            <Row style={{marginBottom: '20px'}}>
               <Form style={{ width: '20%', margin: 'auto' }}>
                 <Form.Group>
                   <Form.Control placeholder='Search..' onChange={handleSearchChange} />
