@@ -37,7 +37,7 @@ export const PokemonView = () => {
             <Card className='white-text'style={{marginTop:'50px', height: '500px', position: 'fixed', width: '400px', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgb(0,0,0,0.5)'}}>
                 <Card.Title>Pokemon View</Card.Title>
                 {currentPokemon && (
-                    <Card.Body style={{paddingBottom: ''}}>
+                    <Card.Body style={{paddingBottom: '', display: 'flex', alignItems: 'start', flexDirection: 'column', width: '90%'}}>
                         <p>Name: {currentPokemon.name}</p>
                         <p>Height: {currentPokemon.height ? `${currentPokemon.height / 10}m`  : ''} </p>
                         <p>Weight: {currentPokemon.weight ? `${currentPokemon.weight / 10}kg` : ''}</p>
