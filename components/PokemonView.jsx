@@ -44,7 +44,7 @@ export const PokemonView = () => {
                         <p>Description: {speciesData.flavor_text_entries && speciesData.flavor_text_entries[0].flavor_text}</p>
                     </Card.Body>
                 )}
-                {currentPokemon.sprites && (<Card.Img src={currentPokemon.sprites.other.showdown.front_default}  style={{height: '250px', width: '250px'}}/>)}
+                {currentPokemon.sprites && (<Card.Img src={currentPokemon.sprites.other.showdown.front_default}  style={{height: `${currentPokemon.height > 10 ? '50%' : '35%'}`, width: `${currentPokemon.height > 10 ? '50%' : '35%'}`}}/>)}
                 <Button onClick={addToParty} disabled={!currentPokemon.name || party.length == 6}>Add to Party</Button>
             </Card>
         </Card>
