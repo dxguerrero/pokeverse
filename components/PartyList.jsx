@@ -14,8 +14,8 @@ export const PartyList  = () => {
         <Card style={{height: '100%', width: '100%', background: 'none', border: "none", backgroundColor: 'none', overflow: 'hidden'}}>
                 <Card style={{borderRadius: '90px', backgroundColor: 'rgb(14, 122, 97)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center'}}>
                     <Col style={{width: '100%'}}>
-                        <Row style={{marginBottom: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%'}}>
-                            <Card.Title className='white-text' style={{width: '100%'}}>Current Party</Card.Title>
+                        <Row style={{marginBottom: '10px', display: 'flex', alignItems: 'center', width: '100%'}}>
+                            <Card.Title className='white-text' style={{width: '100%', textAlign: 'center'}}>Current Party</Card.Title>
                         </Row>
                     </Col>
                 </Card>
