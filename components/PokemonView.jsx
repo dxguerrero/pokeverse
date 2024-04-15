@@ -5,32 +5,49 @@ import { PartyContext } from '../contexts/PartyContext';
 
 
 export const PokemonView = () => {
-
     const { currentPokemon } = useContext(CurrentPokemonContext);
-    const { party, setParty} = useContext(PartyContext);
-    const [ speciesData, setSpeciesData ] = useState({});
-
+    const { party, setParty } = useContext(PartyContext);
+    const [speciesData, setSpeciesData] = useState({});
+    const [description, setDescription] = useState('');
+  
     const addToParty = () => {
-         if (currentPokemon && party.length < 6) {
-            setParty([...party, currentPokemon])
+      if (currentPokemon && party.length < 6) {
+        setParty([...party, currentPokemon]);
+      }
+    };
+  
+    const getDescription = (entries) => {
+      for (let i = 0; i < entries.length; i++) {
+        if (entries[i].language.name === 'en') {
+          return entries[i].flavor_text;
         }
-    }; 
-    
+      }
+      return '';
+    };
+  
     async function fetchSpeciesData() {
+      if (!speciesData.name || speciesData.name !== currentPokemon.name) {
         try {
-            const res = await fetch(currentPokemon.species.url);
-            const data = await res.json();
-            setSpeciesData(data);
+          const res = await fetch(currentPokemon.species.url);
+          const data = await res.json();
+          setSpeciesData(data);
         } catch (error) {
-            console.error("There was an error fetching species data", error);
+          console.error("There was an error fetching species data", error);
         }
-    }
-
+      }
+    };
+  
     useEffect(() => {
-        if(currentPokemon.name) {
-            fetchSpeciesData();
+      if (currentPokemon.name) {
+        fetchSpeciesData();
+        if (speciesData.flavor_text_entries) {
+          setDescription(getDescription(speciesData.flavor_text_entries));
+        } else {
+          setDescription('');
         }
-    }, [currentPokemon])
+      }
+    }, [currentPokemon]);
+    
 
     return (
         <Card style={{height: '100%', width: '400px', backgroundColor: 'rgb(0,0,0,0.2)'}}>
@@ -41,7 +58,7 @@ export const PokemonView = () => {
                         <p>Name: {currentPokemon.name}</p>
                         <p>Height: {currentPokemon.height ? `${currentPokemon.height / 10}m`  : ''} </p>
                         <p>Weight: {currentPokemon.weight ? `${currentPokemon.weight / 10}kg` : ''}</p>
-                        <p>Description: {speciesData.flavor_text_entries && speciesData.flavor_text_entries[0].flavor_text}</p>
+                        <p>Description: {description && description}</p>
                     </Card.Body>
                 )}
                 {currentPokemon.sprites && (<Card.Img src={currentPokemon.sprites.other.showdown.front_default}  style={{height: `${currentPokemon.height > 10 ? '50%' : '35%'}`, width: `${currentPokemon.height > 10 ? '50%' : '35%'}`}}/>)}
