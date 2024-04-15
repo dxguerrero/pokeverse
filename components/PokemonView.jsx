@@ -31,6 +31,11 @@ export const PokemonView = () => {
           const res = await fetch(currentPokemon.species.url);
           const data = await res.json();
           setSpeciesData(data);
+          if (data.flavor_text_entries) {
+            setDescription(getDescription(data.flavor_text_entries));
+          } else {
+            setDescription('');
+          }
         } catch (error) {
           console.error("There was an error fetching species data", error);
         }
@@ -40,11 +45,6 @@ export const PokemonView = () => {
     useEffect(() => {
       if (currentPokemon.name) {
         fetchSpeciesData();
-        if (speciesData.flavor_text_entries) {
-          setDescription(getDescription(speciesData.flavor_text_entries));
-        } else {
-          setDescription('');
-        }
       }
     }, [currentPokemon]);
     
@@ -58,7 +58,7 @@ export const PokemonView = () => {
                         <p>Name: {currentPokemon.name}</p>
                         <p>Height: {currentPokemon.height ? `${currentPokemon.height / 10}m`  : ''} </p>
                         <p>Weight: {currentPokemon.weight ? `${currentPokemon.weight / 10}kg` : ''}</p>
-                        <p>Description: {description && description}</p>
+                        <p>Description: {description}</p>
                     </Card.Body>
                 )}
                 {currentPokemon.sprites && (<Card.Img src={currentPokemon.sprites.other.showdown.front_default}  style={{height: `${currentPokemon.height > 10 ? '50%' : '35%'}`, width: `${currentPokemon.height > 10 ? '50%' : '35%'}`}}/>)}
