@@ -41,6 +41,9 @@ export const PokemonView = () => {
         }
       }
     };
+
+    const height = currentPokemon.height ? currentPokemon.height : 0;
+    const imageSize = Math.min(height * 5, 40);
   
     useEffect(() => {
       if (currentPokemon.name) {
@@ -50,8 +53,8 @@ export const PokemonView = () => {
     
 
     return (
-        <Card style={{height: '100%', width: '400px', backgroundColor: 'rgb(0,0,0,0.2)'}}>
-            <Card className='white-text'style={{marginTop:'50px', height: '500px', position: 'fixed', width: '400px', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgb(0,0,0,0.5)'}}>
+        <Card className='view-container' style={{height: '100%', width: '400px', backgroundColor: 'rgb(0,0,0,0.2)', overflow: 'scroll'}}>
+            <Card className='white-text'style={{marginTop:'50px', minHeight: '40%', position: 'fixed', width: '400px', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgb(0,0,0,0.5)'}}>
                 <Card.Title>Pokemon View</Card.Title>
                 {currentPokemon && (
                     <Card.Body style={{paddingBottom: '', display: 'flex', alignItems: 'start', flexDirection: 'column', width: '90%'}}>
@@ -61,7 +64,7 @@ export const PokemonView = () => {
                         <p>Description: {description}</p>
                     </Card.Body>
                 )}
-                {currentPokemon.sprites && (<Card.Img src={currentPokemon.sprites.other.showdown.front_default}  style={{height: `${currentPokemon.height > 10 ? '50%' : '35%'}`, width: `${currentPokemon.height > 10 ? '50%' : '35%'}`}}/>)}
+                {currentPokemon.sprites && (<Card.Img src={currentPokemon.sprites.other.showdown.front_default}  style={{height: `${imageSize}%`, width: `${imageSize}%`}} />)}
                 <Button onClick={addToParty} disabled={!currentPokemon.name || party.length == 6}>Add to Party</Button>
             </Card>
         </Card>
