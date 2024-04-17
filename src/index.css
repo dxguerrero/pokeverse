@@ -55,3 +55,9 @@ body {
 .color {
   color:rgb(10, 76, 61)
 }
+
+.view-container {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+}
