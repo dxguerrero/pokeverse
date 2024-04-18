@@ -50,7 +50,12 @@ export const PokemonView = () => {
         fetchSpeciesData();
       }
     }, [currentPokemon]);
-    
+
+    const titleCaseName = currentPokemon?.name?.replace(
+        /\w\S*/g,
+        txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+    )
+      
 
     return (
         <Card className='view-container' style={{height: '100%', width: '400px', backgroundColor: 'rgb(0,0,0,0.2)', overflow: 'scroll'}}>
@@ -58,7 +63,7 @@ export const PokemonView = () => {
                 <Card.Title>Pokemon View</Card.Title>
                 {currentPokemon && (
                     <Card.Body style={{paddingBottom: '', display: 'flex', alignItems: 'start', flexDirection: 'column', width: '90%'}}>
-                        <p>Name: {currentPokemon.name}</p>
+                        <p>Name: {titleCaseName}</p>
                         <p>Height: {currentPokemon.height ? `${currentPokemon.height / 10}m`  : ''} </p>
                         <p>Weight: {currentPokemon.weight ? `${currentPokemon.weight / 10}kg` : ''}</p>
                         <p>Description: {description}</p>
