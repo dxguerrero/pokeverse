@@ -37,7 +37,7 @@ export const PartyList  = () => {
                                             </Row>
                                         </Col>
                                         <Col style={{display: 'flex', justifyContent: 'end', flexDirection: 'row', width: '50%'}}>
-                                                <img src={pokemon.sprites.other.showdown.front_default} style={{height: `${pokemon.height > 10 ? '100%' : '75%'}`, width: `${pokemon.height > 10 ? '50%' : '37.5%'}`}}/>
+                                                <img src={pokemon.sprites.versions?.['generation-viii']?.icons?.front_default} style={{height: `75px`, width: `75px`}}/>
                                         </Col>
                                     </Row>
                                 </Container>
