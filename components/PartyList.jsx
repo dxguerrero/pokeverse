@@ -33,7 +33,7 @@ export const PartyList  = () => {
                                                 <Button variant='danger' style={{borderRadius: '100px', width: '30px', height: '30px'}} onClick={() => removeFromParty(index)}>X</Button>
                                             </Row>
                                             <Row>
-                                            <Card.Title className='white-text'>{pokemon.name}</Card.Title>
+                                            <Card.Title className='white-text'>{pokemon.name?.replace(/\w\S*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase())}</Card.Title>
                                             </Row>
                                         </Col>
                                         <Col style={{display: 'flex', justifyContent: 'end', flexDirection: 'row', width: '50%'}}>
